@@ -9,10 +9,10 @@ import appConstant from '../constants/appConstant';
       case appConstant.INCREMENT_LIKES :
         console.log('Incrementing likes!');
         const i = action.index;
-        return[
+        return [
           ...state.slice(0, i),     // before the matched index
           {...state[i], likes: state[i].likes + 1},
-          ...state.slice(0, i + 1)  // after the matched index
+          ...state.slice(i + 1)     // after the matched index
         ]
     default:
       return state;
